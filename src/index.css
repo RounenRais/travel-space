@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+
+/* ── Tasarım jetonları ───────────────────────────────────────────────
+   Uzay karanlık ve serindir; arayüz ise kâğıt, metal ve mürekkeptir.
+   Kâğıt asla parlamaz — vurgu renkleri ışık değil mürekkep gibi davranır.  */
+@theme {
+  --color-void: #0b1018;
+  --color-hull: #16202e;
+  --color-paper: #ede3ce;
+  --color-graphite: #22262b;
+  --color-redline: #c4372b;
+  --color-telemetry: #5b93c9;
+
+  --font-tech: 'Space Grotesk', system-ui, sans-serif;
+  --font-voice: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --hull-line: #29384d;
+  --paper-line: #c3b393;
+  --paper-fold: #d9cbae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-void);
+  color: #c8d2df;
+  font-family: var(--font-voice);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
+
+/* ── Kâğıt ───────────────────────────────────────────────────────────
+   Apollo dönemi kontrol listesi kartonu: hafif grenli, sıcak, mat.      */
+.paper {
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0) 38%),
+    radial-gradient(120% 90% at 8% 0%, rgba(160, 130, 88, 0.1), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  color: var(--color-graphite);
+  /* Kâğıt yüzer, ışımaz: gölge tek yönlü ve yumuşak, renkli hâle yok. */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 18px 38px -22px rgba(0, 0, 0, 0.85);
+}
+
+/* Zımba/delgi cetveli — portre bu oluğa iliştirilmiş gibi durur. */
+.punch-gutter {
+  background-image: radial-gradient(
+    circle at center,
+    var(--color-void) 0 3.5px,
+    rgba(0, 0, 0, 0.18) 3.5px 4.6px,
+    transparent 4.7px
+  );
+  background-size: 100% 34px;
+  background-repeat: repeat-y;
+  background-position: center top;
+}
+
+/* ── Metal ──────────────────────────────────────────────────────────── */
+.hull {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(0, 0, 0, 0.2)),
+    var(--color-hull);
+}
+
+.hull-rule {
+  border-color: var(--hull-line);
+}
+
+/* ── Tipografi rolleri ───────────────────────────────────────────────
+   Form alanı etiketi: küçük, teknik, altı çizgili — ama ALL-CAPS değil.  */
+.field-label {
+  font-family: var(--font-tech);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #7c8ba0;
+}
+
+.paper .field-label {
+  color: #7a6a4e;
+}
+
+.numeric {
+  font-family: var(--font-tech);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* 3B sahnedeki durak kodu etiketi */
+.marker-code {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-paper);
+  opacity: 0.8;
+  white-space: nowrap;
+  user-select: none;
+}
+.marker-code[data-emphasized] {
+  color: var(--color-redline);
+  opacity: 1;
+}
+
+/* ── Tek cesur an: odak kartının aşağıdan çarparak gelişi ───────────── */
+@keyframes card-slam {
+  0% {
+    transform: translateY(105%) rotate(0.9deg);
+  }
+  62% {
+    transform: translateY(-1.4%) rotate(-0.22deg);
+  }
+  84% {
+    transform: translateY(0.5%) rotate(0.1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.card-enter {
+  animation: card-slam 460ms cubic-bezier(0.16, 0.9, 0.24, 1) both;
+}
+
+@keyframes rail-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rail-in {
+  animation: rail-in 360ms ease-out both;
+}
+
+/* Rehberin gözü konuşurken canlanır. */
+@keyframes eye-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    r: 3.1;
+  }
+  50% {
+    opacity: 1;
+    r: 3.6;
+  }
+}
+
+.guide-eye-live {
+  animation: eye-pulse 1.05s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.caret {
+  display: inline-block;
+  width: 0.52em;
+  height: 1.02em;
+  margin-left: 0.12em;
+  vertical-align: -0.16em;
+  background: var(--color-redline);
+  animation: caret-blink 900ms step-end infinite;
+}
+
+/* ── Kaydırıcılar: form üzerindeki mekanik ayar kolları ─────────────── */
+.dial {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.dial::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--paper-line);
+}
+
+.dial::-moz-range-track {
+  height: 2px;
+  background: var(--paper-line);
+}
+
+.dial::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 20px;
+  margin-top: -9px;
+  background: var(--color-graphite);
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 2px 0 0 rgba(196, 55, 43, 0.9);
+}
+
+.dial::-moz-range-thumb {
+  width: 11px;
+  height: 20px;
+  background: var(--color-graphite);
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 2px 0 0 rgba(196, 55, 43, 0.9);
+}
+
+.dial:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-redline);
+  outline-offset: 2px;
+}
+
+/* Hesaplanmış alan: formda kırmızı kalemle altı çizili sonuç. */
+.computed {
+  border-bottom: 2px solid var(--color-redline);
+  padding-bottom: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-enter,
+  .rail-in,
+  .guide-eye-live,
+  .caret {
+    animation: none;
+  }
+}
+
+::selection {
+  background: rgba(196, 55, 43, 0.3);
+}

@@ -1,0 +1,208 @@
+{
+  "bennu": {
+    "id": "bennu",
+    "displayName": "101955 Bennu",
+    "subtitle": "Apollo grubu · Dünya'ya yakın",
+    "logCode": "BEN",
+    "model": {
+      "type": "glb",
+      "path": "/models/asteroids/bennu.glb"
+    },
+    "visualScale": 0.3,
+    "position": [
+      27.8,
+      1.2,
+      -6.2
+    ],
+    "spinSpeed": 0.18,
+    "defaultDiameterM": 490,
+    "defaultVelocityKms": 12.7,
+    "defaultDensityKgM3": 1190,
+    "dataNote": "Çap ve yoğunluk OSIRIS-REx ölçümlerine dayanır; hız tipik bir çarpma senaryosu varsayımıdır.",
+    "telemetry": [
+      {
+        "label": "Ortalama çap",
+        "value": "490 m"
+      },
+      {
+        "label": "Yoğunluk",
+        "value": "1 190 kg/m³"
+      },
+      {
+        "label": "Dönme periyodu",
+        "value": "4,3 saat"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Bennu. Küçük görünüyor ama listemizde adı var — yörüngesi Dünya'nınkini kesiyor."
+      },
+      {
+        "speaker": "guide",
+        "text": "Bir taş bloğu değil aslında; gevşek bağlı bir moloz yığını. OSIRIS-REx sondası 2020'de üstüne dokundu ve yüzey neredeyse yutacak gibi çöktü."
+      },
+      {
+        "speaker": "guide",
+        "text": "Merak ediyorsan — evet, hesaplayabiliriz. Çarpsaydı ne olurdu, bak istersen."
+      }
+    ],
+    "simulation": true
+  },
+  "toutatis": {
+    "id": "toutatis",
+    "displayName": "4179 Toutatis",
+    "subtitle": "Apollo grubu · ikili loblu",
+    "logCode": "TOU",
+    "model": {
+      "type": "stl",
+      "path": "/models/asteroids/toutatis.stl",
+      "color": "#6b5d52",
+      "roughness": 0.9
+    },
+    "visualScale": 0.28,
+    "position": [
+      25.6,
+      -1.5,
+      -9.6
+    ],
+    "spinSpeed": 0.05,
+    "defaultDiameterM": 2800,
+    "defaultVelocityKms": 11,
+    "defaultDensityKgM3": 2100,
+    "dataNote": "Şekil modeli Goldstone radar gözlemlerinden; yoğunluk S-tipi moloz yığını tahminidir.",
+    "telemetry": [
+      {
+        "label": "Boyutlar",
+        "value": "4,75 × 2,4 × 1,95 km"
+      },
+      {
+        "label": "Yoğunluk (tahmini)",
+        "value": "≈ 2 100 kg/m³"
+      },
+      {
+        "label": "Dönme",
+        "value": "kaotik, takla atıyor"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Toutatis. Buna bakarken başın dönerse normal — düzgün dönmüyor, takla atıyor."
+      },
+      {
+        "speaker": "guide",
+        "text": "İki parça birbirine yapışmış gibi duruyor, çünkü büyük ihtimalle öyle. Yavaş bir çarpışmanın sonucu."
+      },
+      {
+        "speaker": "guide",
+        "text": "Bennu'dan çok daha iri. Farkı görmek istersen simülasyona onu da koyabilirim."
+      }
+    ],
+    "simulation": true
+  },
+  "mithra": {
+    "id": "mithra",
+    "displayName": "4486 Mithra",
+    "subtitle": "Apollo grubu · ikili loblu",
+    "logCode": "MIT",
+    "model": {
+      "type": "stl",
+      "path": "/models/asteroids/mithra.stl",
+      "color": "#6b5d52",
+      "roughness": 0.9
+    },
+    "visualScale": 0.24,
+    "position": [
+      29.8,
+      -0.7,
+      -3.4
+    ],
+    "spinSpeed": 0.03,
+    "defaultDiameterM": 1800,
+    "defaultVelocityKms": 17,
+    "defaultDensityKgM3": 2700,
+    "dataNote": "Yoğunluk ölçülmedi; S-tipi asteroitler için tipik değer varsayıldı. YER TUTUCU.",
+    "telemetry": [
+      {
+        "label": "Boyutlar",
+        "value": "2,35 × 1,65 × 1,44 km"
+      },
+      {
+        "label": "Yoğunluk",
+        "value": "ölçülmedi (varsayım)"
+      },
+      {
+        "label": "Dönme periyodu",
+        "value": "≈ 68 saat"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Mithra. Bu da iki loblu — anlaşılan evren fıstık şeklini seviyor."
+      },
+      {
+        "speaker": "guide",
+        "text": "Çok yavaş dönüyor; burada bir 'gün' neredeyse üç Dünya günü sürüyor."
+      },
+      {
+        "speaker": "guide",
+        "text": "Yoğunluğunu kimse ölçmedi. Simülasyonda gördüğün değer eğitimli bir tahmin, onu da söyleyeyim."
+      }
+    ],
+    "simulation": true
+  },
+  "kleopatra": {
+    "id": "kleopatra",
+    "displayName": "216 Kleopatra",
+    "subtitle": "Ana kuşak · M-tipi",
+    "logCode": "KLE",
+    "model": {
+      "type": "stl",
+      "path": "/models/asteroids/kleopatra.stl",
+      "color": "#7a6b5c",
+      "roughness": 0.88
+    },
+    "visualScale": 0.42,
+    "position": [
+      24.6,
+      2.0,
+      -12.6
+    ],
+    "spinSpeed": 0.12,
+    "defaultDiameterM": 124000,
+    "defaultVelocityKms": 17,
+    "defaultDensityKgM3": 3380,
+    "dataNote": "Şekil ve yoğunluk VLT/SPHERE gözlemlerinden. Dünya'ya çarpma senaryosu tamamen varsayımsaldır — ana kuşakta kalır.",
+    "telemetry": [
+      {
+        "label": "Boyutlar",
+        "value": "276 × 94 × 78 km"
+      },
+      {
+        "label": "Yoğunluk",
+        "value": "3 380 kg/m³"
+      },
+      {
+        "label": "Uyduları",
+        "value": "2 (AlexHelios, CleoSelene)"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Kleopatra. Ölçeği bir düzeltelim: bu, diğer üçünün yanında bir dağ değil, bir kıta."
+      },
+      {
+        "speaker": "guide",
+        "text": "Köpek kemiği deniyor şekline. İki büyük kütle, arada ince bir boyun. Metalce zengin, yani ağır."
+      },
+      {
+        "speaker": "guide",
+        "text": "Rahat ol, ana kuşakta kalıyor. Ama simülasyonda denemek istersen... sonucu görmek öğretici olur."
+      }
+    ],
+    "simulation": true
+  }
+}

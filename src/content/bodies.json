@@ -1,0 +1,196 @@
+{
+  "earth": {
+    "id": "earth",
+    "displayName": "Dünya",
+    "subtitle": "Üçüncü gezegen",
+    "logCode": "TER",
+    "model": {
+      "type": "glb",
+      "path": "/models/earth/earth.glb"
+    },
+    "visualScale": 1.25,
+    "position": [
+      13.0,
+      0.0,
+      0.0
+    ],
+    "spinSpeed": 0.06,
+    "telemetry": [
+      {
+        "label": "Ortalama yarıçap",
+        "value": "6 371 km"
+      },
+      {
+        "label": "Güneş'e uzaklık",
+        "value": "149.6 milyon km"
+      },
+      {
+        "label": "Bir gün",
+        "value": "23s 56d"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Tur buradan başlıyor. Evin. Şu anda üstünde duruyorsun, ama dışarıdan bakmak bambaşka bir his, değil mi?"
+      },
+      {
+        "speaker": "guide",
+        "text": "Biraz mavi, biraz yeşil, çoğunlukla su. Ve şu ince mavi çizgi var ya, kenardaki? Atmosfer. Solunabilir kısmı ondan da ince."
+      },
+      {
+        "speaker": "guide",
+        "text": "Kemerini bağla. Sıradaki durak çok uzakta değil — aslında hep yanı başımızdaydı."
+      }
+    ],
+    "simulation": null
+  },
+  "moon": {
+    "id": "moon",
+    "displayName": "Ay",
+    "subtitle": "Dünya'nın uydusu",
+    "logCode": "LUN",
+    "model": {
+      "type": "stl-relief",
+      "path": "/models/moon/near-side.stl",
+      "altPath": "/models/moon/far-side.stl",
+      "facesToward": "earth",
+      "color": "#c7c5c0",
+      "roughness": 0.95
+    },
+    "visualScale": 0.5,
+    "position": [
+      16.4,
+      0.25,
+      1.5
+    ],
+    "spinSpeed": 0,
+    "telemetry": [
+      {
+        "label": "Ortalama yarıçap",
+        "value": "1 737 km"
+      },
+      {
+        "label": "Dünya'ya uzaklık",
+        "value": "384 400 km"
+      },
+      {
+        "label": "Özel uçağımızla",
+        "value": "≈ 20 gün"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Ay. Gece gökyüzüne baktığında gördüğün yüz tam olarak bu — ve hep bu. Ay bize hep aynı tarafını gösterir."
+      },
+      {
+        "speaker": "guide",
+        "text": "Şu koyu düzlükler 'deniz' diye adlandırılmış. Su yok tabii; soğumuş lav. İsim koyan adamlar iyimserdi."
+      },
+      {
+        "speaker": "guide",
+        "text": "İstersen hiç görmediğin tarafını da çevirebilirim. Orası çok daha kraterli ve açıkçası biraz ürkütücü.",
+        "reveal": "far-side"
+      }
+    ],
+    "simulation": null
+  },
+  "mars": {
+    "id": "mars",
+    "displayName": "Mars",
+    "subtitle": "Dördüncü gezegen",
+    "logCode": "MAR",
+    "model": {
+      "type": "sphere-texture",
+      "path": "/textures/mars/mars-color.jpg"
+    },
+    "visualScale": 0.8,
+    "position": [
+      21.8,
+      -0.5,
+      -2.6
+    ],
+    "spinSpeed": 0.055,
+    "telemetry": [
+      {
+        "label": "Ortalama yarıçap",
+        "value": "3 390 km"
+      },
+      {
+        "label": "Yüzey sıcaklığı",
+        "value": "−63 °C ort."
+      },
+      {
+        "label": "Özel uçağımızla",
+        "value": "≈ 8 ay"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Mars'a hoş geldin. Kızıl görünmesinin sebebi romantik değil, kimyasal: toprağı paslı. Gerçekten, demir oksit."
+      },
+      {
+        "speaker": "guide",
+        "text": "Atmosfer var ama o kadar ince ki, dışarı çıkarsan rüzgârı duyarsın da hissetmezsin."
+      },
+      {
+        "speaker": "guide",
+        "text": "Buradaki Olympus Mons, Everest'in yaklaşık üç katı. Tırmanmayı teklif etmiyorum, sadece böbürleniyorum."
+      }
+    ],
+    "simulation": null
+  },
+  "saturn": {
+    "id": "saturn",
+    "displayName": "Satürn",
+    "subtitle": "Altıncı gezegen",
+    "logCode": "SAT",
+    "model": {
+      "type": "sphere-texture",
+      "path": "/textures/saturn/saturn-color.jpg",
+      "ring": {
+        "inner": 1.28,
+        "outer": 2.25,
+        "tilt": 0.47
+      }
+    },
+    "visualScale": 3.2,
+    "position": [
+      38.0,
+      1.0,
+      4.0
+    ],
+    "spinSpeed": 0.09,
+    "telemetry": [
+      {
+        "label": "Ekvator yarıçapı",
+        "value": "60 268 km"
+      },
+      {
+        "label": "Halka kalınlığı",
+        "value": "≈ 10–100 m"
+      },
+      {
+        "label": "Özel uçağımızla",
+        "value": "≈ 6 yıl"
+      }
+    ],
+    "dialogue": [
+      {
+        "speaker": "guide",
+        "text": "Ve işte turun gösterişli durağı. Halkalar buradan katı bir disk gibi duruyor, değil mi?"
+      },
+      {
+        "speaker": "guide",
+        "text": "Değiller. Milyarlarca ayrı buz ve kaya parçası, her biri kendi yörüngesinde. Yan taraftan bakarsan neredeyse kaybolurlar — inanılmaz ince."
+      },
+      {
+        "speaker": "guide",
+        "text": "Bir de şunu söyleyeyim: Satürn'ün yoğunluğu sudan düşük. Yeterince büyük bir küvet bulsan yüzerdi. Bulamazsın ama."
+      }
+    ],
+    "simulation": null
+  }
+}
